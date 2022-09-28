@@ -1,0 +1,17 @@
+{
+    auto_https disable_redirects
+}
+
+http://vhost1.localhost {
+    basicauth {
+            user1 $2a$14$nls0D9rj3VBESEdasFOl5einR7wCDHWFPO3YEGMRw1pb1CPmBHnGO
+    }
+    reverse_proxy vhost1:80
+}
+
+http://vhost2.localhost {
+        basicauth {
+                user2 $2a$14$35xrIydLI6GXwfQGeH0PxebvakuMhPdk/XwfOmSvijkI1LnPqRgg2
+        }
+        reverse_proxy vhost2:80
+}
